@@ -267,18 +267,19 @@ Resources:
           - Name: DeployProd
             Actions:
               # uncomment this to have a manual approval step before deployment to production
-              - Name: ManualApproval
-                ActionTypeId:
-                 Category: Approval
-                 Owner: AWS
-                 Provider: Manual
-                 Version: "1"
+              #- Name: ManualApproval
+                #ActionTypeId:
+                 #Category: Approval
+                 #Owner: AWS
+                 #Provider: Manual
+                 #Version: "1"
               - Name: DeployProd
                 ActionTypeId:
                   Category: Build
                   Owner: AWS
                   Provider: CodeBuild
                   Version: "1"
+                RunOrder: 2
                 Configuration:
                   ProjectName: !Ref CodeBuildProjectDeploy
                   EnvironmentVariables: !Sub |
