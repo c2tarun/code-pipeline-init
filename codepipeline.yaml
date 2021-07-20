@@ -272,8 +272,7 @@ Resources:
                  Category: Approval
                  Owner: AWS
                  Provider: Manual
-                 Version: '1'
-                 RunOrder: 1
+                 Version: "1"
               - Name: DeployProd
                 ActionTypeId:
                   Category: Build
